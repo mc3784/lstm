@@ -6,7 +6,7 @@
 ----  LICENSE file in the root directory of this source tree. 
 ----
 
-gpu = true
+gpu = false
 if gpu then
     require 'cunn'
     print("Running on GPU") 
@@ -20,7 +20,7 @@ require('nngraph')
 require('base')
 ptb = require('data')
 
--- Trains 1 epoch and gives test ~182 perplexity.
+-- Trains 1 epoch and gives validation set ~182 perplexity (CPU).
 local params = {
                 batch_size=20, -- minibatch
                 seq_length=20, -- unroll length
